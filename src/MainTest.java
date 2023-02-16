@@ -40,7 +40,7 @@ public class MainTest {
 		
 		Vector v = new Vector(new Coordinate(x.add(x.getNum())),new Coordinate(y.add(y.getNum())), new Coordinate(z.subtract(y.getNum())));
 		Vector vc = v.crossProduct(new Vector(new Coordinate(2),new Coordinate(5),new Coordinate(1)));
-		Vector vd = v.scalarMuliplication(4).crossProduct(vc);
+		Vector vd = v.scale(4).crossProduct(vc);
 		Vector vn = vd.normalize();
 		System.out.println(v.toString()+"\n"+vc.toString()+"\n"+vd.toString()+"\n"+vn.toString());
 		
@@ -76,12 +76,12 @@ public class MainTest {
 		
 		System.out.println(t1.toString()+"\n"+t2.toString()+"\n"+t3.toString());
 		
-		Triangle tri = new Triangle(t1,t2,t3, new Color());
-		Plane pl = new Plane(t1, v, new Color());
-		Sphere sp = new Sphere(t3,5.0,new Color());
-		Cylinder cyl = new Cylinder(5.0,t2,r,new Color());
+		Triangle tri = new Triangle(t1,t2,t3, new Color(),new Material(1,1,1,1,1));
+		Plane pl = new Plane(t1, v, new Color(), new Material(1,1,1,1,1));
+		Sphere sp = new Sphere(t3,5.0,new Color(), new Material(1,1,1,1,1));
+		//Cylinder cyl = new Cylinder(5.0,t2,r,new Color(), new Material(1,1,1,1,1));
 		
-		System.out.println(tri.toString()+"\n"+pl.toString()+"\n"+sp.toString()+"\n"+cyl.toString());
+		System.out.println(tri.toString()+"\n"+pl.toString()+"\n"+sp.toString()+"\n"/*+cyl.toString()*/);
 		/**
 		 * 
 		 *(1.0, 4.0, -9.0)
